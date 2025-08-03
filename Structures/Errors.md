@@ -11,6 +11,28 @@
 
 ```
 
+## BinaryTree.cpp
+- Error: request for member ‘val_’ in ‘((BinaryTreeNode*)this)->BinaryTreeNode::right_ptr_’, which is of pointer type ‘BinaryTreeNode*’ (maybe you meant to use ‘->’ ?)
+    - Solution: left_ptr_->val_ instead of left_ptr_.val_
+
+The -> operator is actually syntactic sugar for pointer dereferencing:
+```cpp
+// These are equivalent:
+left_ptr_->val_
+(*left_ptr_).val_  // Dereference the pointer first, then use .
+```
+
+```
+. (dot) = Use with objects
+-> (arrow) = Use with pointers
+
+*The memory trick "Object = One dot" and "Pointer = Pointer arrow" should help you remember!*
+```
+
+
+
+
+
 ## Main.cpp
 
 - You can create objects inline, inside parameter of other objects

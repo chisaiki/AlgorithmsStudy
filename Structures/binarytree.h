@@ -16,6 +16,7 @@ class BinaryTreeNode{
     BinaryTreeNode(int val, BinaryTreeNode* left_ptr, BinaryTreeNode* right_ptr);
 
     void getVal();
+    void getObjVal();
 };
 
 #endif
