@@ -28,6 +28,7 @@ class BinaryTreeNode{
     //not sure if return should be void or bool to collect success or fail
     static BinaryTreeNode* InsertVal(BinaryTreeNode* root, int value);
 
+    //maybe bool? for success status?
     static void DeleteVal(BinaryTreeNode* root, int value);
 
 

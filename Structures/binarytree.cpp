@@ -61,6 +61,7 @@ BinaryTreeNode* BinaryTreeNode::InsertVal(BinaryTreeNode* root, int value){
         root->val_ = value;
     }
 
+    //need to figure out why this works
     if(root->val_ < value){
         // You want to update the RIGHT child, then return the current root
         root->right_ptr_ = InsertVal(root->right_ptr_, value);
