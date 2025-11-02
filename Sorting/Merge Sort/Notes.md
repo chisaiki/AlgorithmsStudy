@@ -9,7 +9,7 @@ At each level, you process all n elements total
 ## Space Complexity
 $O(N)$  
 Why?  
-Need O(n) space for the temporary arrays created during splitting and merging.
+Need O(n) space for the temporary arrays created during splitting and merging. Program creates copies of subarrays at every level. Even though theres $log n$ levels, at each level it's storing roughly $n$ elements total across all subarrays.
 
 <details>
 <summary><h2>Unoptimized Program</h2></summary>
