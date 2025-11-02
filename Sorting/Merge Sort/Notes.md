@@ -89,23 +89,23 @@ std::vector<int> merge(std::vector<int> &listone, std::vector<int> &listtwo){
     int i = 0, j = 0;
     while(listone.size() > i && listtwo.size() > j){
         if (listone[i] >= listtwo[j]){
-            returnArray.push_back(std::move(listtwo[j]));
+            returnArray.push_back(listtwo[j]);
             j++;
         }
         else{
-            returnArray.push_back(std::move(listone[i]));
+            returnArray.push_back(listone[i]);
             i++;
         }
     }
 
     /*Add any existing values left to the return array*/
     while(listone.size() > i){
-        returnArray.push_back(std::move(listone[i]));
+        returnArray.push_back(listone[i]);
         i++;
     }
 
     while(listtwo.size() > j){
-        returnArray.push_back(std::move(listtwo[j]));
+        returnArray.push_back(listtwo[j]);
         j++;
     }
     return returnArray;
