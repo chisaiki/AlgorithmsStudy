@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> mergeSort(std::vector<int> list);
+std::vector<int> mergeSort(std::vector<int> &list);
 
-std::vector<int> merge(std::vector<int> listone, std::vector<int> listtwo);
+std::vector<int> merge(std::vector<int> &listone, std::vector<int> &listtwo);
 
 int main(){
     std::vector<int> values = {1, 4, 2, 45, 123, 9, 0, 12};
@@ -25,7 +25,7 @@ int main(){
 }
 
 
-std::vector<int> mergeSort(std::vector<int> list){
+std::vector<int> mergeSort(std::vector<int> &list){
     /*Stop mergesort once we reach an array with only one element*/
     if (list.size() == 1){
         return list;
@@ -45,32 +45,31 @@ std::vector<int> mergeSort(std::vector<int> list){
     return merge(firsthalf, secondhalf);
 }
 
-std::vector<int> merge(std::vector<int> listone, std::vector<int> listtwo){
+std::vector<int> merge(std::vector<int> &listone, std::vector<int> &listtwo){
     std::vector<int> returnArray = {};
 
     /*Check which value is smaller and store it in new array*/
     int i = 0, j = 0;
     while(listone.size() > i && listtwo.size() > j){
         if (listone[i] >= listtwo[j]){
-            returnArray.push_back(listtwo[j]);
+            returnArray.push_back(std::move(listtwo[j]));
             j++;
         }
         else{
-            returnArray.push_back(listone[i]);
+            returnArray.push_back(std::move(listone[i]));
             i++;
         }
     }
 
     /*Add any existing values left to the return array*/
     while(listone.size() > i){
-        returnArray.push_back(listone[i]);
+        returnArray.push_back(std::move(listone[i]));
         i++;
     }
 
     while(listtwo.size() > j){
-        returnArray.push_back(listtwo[j]);
+        returnArray.push_back(std::move(listtwo[j]));
         j++;
     }
-
     return returnArray;
 }
