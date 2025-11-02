@@ -49,14 +49,15 @@ std::vector<int> merge(std::vector<int> listone, std::vector<int> listtwo){
     std::vector<int> returnArray = {};
 
     /*Check which value is smaller and store it in new array*/
-    while(listone.size() > 0 && listtwo.size() > 0){
-        if (listone[0] > listtwo[0]){
+    int i = 0, j = 0;
+    while(listone.size() > i && listtwo.size() > j){
+        if (listone[0] >= listtwo[0]){
             returnArray.push_back(listtwo[0]);
-            listtwo.erase(listtwo.begin());
+            j++;
         }
         else{
             returnArray.push_back(listone[0]);
-            listone.erase(listone.begin());
+            i++
         }
     }
 
