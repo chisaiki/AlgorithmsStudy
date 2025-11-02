@@ -6,6 +6,8 @@ Why?
 Divides the array in half recursively: log n levels of recursion  
 At each level, you process all n elements total  
 
+The n in O(nlogn) represents a linear pass through all elements in the input. The log(n) portion represents the number of times the input is split or reduced in size
+
 ## Space Complexity
 $O(N)$  
 Why?  

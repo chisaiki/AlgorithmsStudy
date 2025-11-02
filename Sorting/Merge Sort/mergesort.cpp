@@ -27,7 +27,7 @@ int main(){
 
 std::vector<int> mergeSort(std::vector<int> &list){
     /*Stop mergesort once we reach an array with only one element*/
-    if (list.size() == 1){
+    if (list.size() <= 1){
         return list;
     }
     
