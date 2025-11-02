@@ -6,7 +6,9 @@ Why?
 Divides the array in half recursively: log n levels of recursion  
 At each level, you process all n elements total  
 
-The n in O(nlogn) represents a linear pass through all elements in the input. The log(n) portion represents the number of times the input is split or reduced in size
+The n in O(nlogn) represents a linear pass through all elements in the input. The log(n) portion represents the number of times the input is split or reduced in size  
+
+Merging each of the subarrays takes O(n) time where n is the combined number of elements in the two subarrays because we have to compare each element of each subarray in order to combine them into one sorted array.
 
 ## Space Complexity
 $O(N)$  
