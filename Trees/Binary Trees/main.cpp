@@ -1,12 +1,28 @@
 #include "BST.h"
-#include <iostream>
+
 
 int main(){
-    TreeNode<int>* obj = new TreeNode<int>(2);
 
-    BST<int> NewObject;
 
-    std::cout << NewObject.GetValue() << std::endl;
+    BST<int> NewTree;
+
+    NewTree.Insert(10);
+    NewTree.Insert(3);
+    NewTree.Insert(11);
+    NewTree.Insert(8);
+    NewTree.Insert(7);
+    NewTree.Insert(2);
+    NewTree.Insert(2);
+    NewTree.Insert(2);
+    NewTree.Insert(1);
+    NewTree.Insert(1);
+   
+
+    NewTree.PrintTree();
+
+    std::cout << "Size: " << NewTree.GetSize();
+
+
 
     return 0;
 }
