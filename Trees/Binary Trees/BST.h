@@ -60,7 +60,7 @@ class BST{
 
             /*Find the position (parent) it belongs in*/
             TreeNode<T>* current = root_;
-            while (true){
+            while (current){
 
                 if (current->value > data){
                     if (current->leftchild == nullptr){
@@ -89,21 +89,6 @@ class BST{
             /*Set the parents next pointer to a new object*/
             return false; 
         }
-
-        // void Traverse(TreeNode<T>* current){
-        //     if (current == nullptr){
-        //         return;
-        //     }
-
-        //     std::cout << current->value << std::endl;
-        //     Traverse(current->leftchild);
-        //     Traverse(current->rightchild);
-        // }
-
-        // void PrintTree(){
-        //     TreeNode<T>* current = root_;
-        //     Traverse(current);
-        // }
 
 
         void PrintTree()
