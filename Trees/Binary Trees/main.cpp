@@ -1,5 +1,5 @@
 #include "BST.h"
-
+#include <iostream>
 
 int main(){
 
@@ -15,12 +15,11 @@ int main(){
     NewTree.Insert(12);
     NewTree.Insert(10);
     NewTree.Insert(1);
-   
+
 
     NewTree.PrintTree();
 
-    std::cout << "Size: " << NewTree.GetSize();
-
+    std::cout << NewTree.Search(11)->value << std::endl;
 
 
     return 0;

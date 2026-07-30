@@ -49,6 +49,30 @@ class BST{
             return this->size_;
         }
 
+        TreeNode<T>* BinarySearch(const T data, TreeNode<T>* current){
+  
+            if(current->value == data || current == nullptr){
+                return current; 
+            }
+            else if(current->value > data){
+                // I needed to return for some reason..? When do I return and when do I not?
+                return BinarySearch(data, current->leftchild);
+            }
+            else if (current->value < data){
+                return BinarySearch(data, current->rightchild);
+            }
+
+            return {};
+        }
+
+        TreeNode<T>* Search(const T data){
+           if (root_ == nullptr){
+            return root_;
+           }
+
+           return BinarySearch(data, root_);
+
+        }
 
         /*Create a new node based on the data the user wants to pass*/
         bool Insert(T data = {}){
@@ -91,6 +115,18 @@ class BST{
         }
 
 
+        bool RemoveOne(const T data){
+            if (root_ == nullptr){
+                return false;
+            }
+
+            // Find the node with that data 
+            
+            return false; 
+        }
+
+        bool RemoveAll(const T data);
+        
         void PrintTree()
         {
             PrintTree(root_, "", true);
