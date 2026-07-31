@@ -75,6 +75,7 @@ class BST{
         }
 
         /*Create a new node based on the data the user wants to pass*/
+        /*NEXT FUNCTION DO IT RECURSIVELY*/
         bool Insert(T data = {}){
             if (root_ == nullptr){
                 root_ = new TreeNode<T>(data);
@@ -115,14 +116,44 @@ class BST{
         }
 
 
-        bool RemoveOne(const T data){
-            if (root_ == nullptr){
-                return false;
+        TreeNode<T>* RemoveOne(TreeNode<T> root, const T data){
+            if (root == nullptr){
+                return nullptr;
             }
 
             // Find the node with that data 
-            
-            return false; 
+            if (root->value > data){
+                root->left = RemoveOne(root->left, data);
+            }
+            else if (root->value < data){
+                root->right = RemoveOne(root->right, data);
+            }
+            else{ //The node to delete has been found
+
+                // case of 0 or 1 kid
+
+                if(root->left == nullptr){
+                    TreeNode<T>* temp = root->right;
+                    delete root; 
+                    return temp; 
+                }
+
+                if (root->right == nullptr){
+                    TreeNode<T>* temp = root->left; 
+                    delete root;
+                    return temp; 
+                }
+
+                // Case where it has 2 kids
+                
+                // find successor 
+
+                // set success data to the current root
+
+                // call delete on the successor starting from the current node
+            }
+
+            return root; // this part is the key, where the possible reassignment happens
         }
 
         bool RemoveAll(const T data);
