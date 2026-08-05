@@ -115,6 +115,12 @@ class BST{
             return false; 
         }
 
+        TreeNode<T>* FindSuccessor(TreeNode<T>* root){
+            while (root->leftchild){
+                root = root->leftchild;
+            }
+            return root; 
+        }
 
         TreeNode<T>* RemoveOne(TreeNode<T> root, const T data){
             if (root == nullptr){
@@ -138,13 +144,20 @@ class BST{
                     return temp; 
                 }
 
-                if (root->right == nullptr){
+                else if (root->right == nullptr){
                     TreeNode<T>* temp = root->left; 
                     delete root;
                     return temp; 
                 }
 
                 // Case where it has 2 kids
+                else {
+
+                    // find successor: the smallest in the right subtree 
+                    
+
+ 
+                }
                 
                 // find successor 
 
